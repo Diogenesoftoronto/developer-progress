@@ -33,7 +33,7 @@ const testArrs = [
   { var: [], result: null },
   { var: [1, 0], result: 1 },
   { var: [1, 0, 1], result: 1 },
-  { var: [1, 0, 1, 1, 1, 0, 1], result: 2 },
+  { var: [1, 0, 1, 1, 1, 0, 1], result: 3 },
   { var: [1, 1, 0, 1, 1, 1], result: 3 },
   { var: [1, 2, 0, 1, 1], result: null },
   { var: [1, 1, 1], result: 3 },
