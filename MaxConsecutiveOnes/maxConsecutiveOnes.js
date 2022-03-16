@@ -10,18 +10,20 @@ const findMaxConsecutiveOnes = function (nums) {
     current++; 
     // check if element is 0
     if (!nums[index]) {
+      current -= 1
       // consider midpoints and that i need to return a count
       // check if left side is greater than right side
       // need to return a count and not an index
       console.table({index, max, prev, nums: nums.length, console: 1, current });
+      // prev = current;
+        current = 0;
       
-      if (current > max) {
+    }
+    if (current > max) {
         max = current;
         console.table({index, max, prev, nums: nums.length , console: 2});
+        
       }
-      prev = current;
-      current = 0;
-    }
   }
 
   // console.table({ right, left, result, cpNums: cpNums.length });
@@ -42,14 +44,14 @@ const testArrs = [
   { var: [1, 0], result: 1 },
   { var: [1, 0, 1], result: 1 },
   { var: [1, 0, 1, 1, 1, 0, 1, 1], result: 3 },
-  // { var: [1, 1, 0, 1, 1, 1], result: 3 },
-  // { var: [1, 1, 1, 0, 1, 1], result: 3 },
+  { var: [1, 1, 0, 1, 1, 1], result: 3 },
+  { var: [1, 1, 1, 0, 1, 1], result: 3 },
   { var: [1, 1, 1, 1], result: 4 },
   { var: [0, 0], result: 0 },
   { var: [0, 1], result: 1 },
-  // { var: [0, 0, 1, 1], result: 2 },
-  // { var: [0, 0, 1, 1, 0], result: 2 },
-  // { var: [0, 0, 1], result: 1 },
+  { var: [0, 0, 1, 1], result: 2 },
+  { var: [0, 0, 1, 1, 0], result: 2 },
+  { var: [0, 0, 1], result: 1 },
 ];
 var testFunc = function (func, testVars, funcName) {
   // conditional if tests pass
